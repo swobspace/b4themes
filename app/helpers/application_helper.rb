@@ -9,18 +9,18 @@ EOIPSUM
   end
 
   def all_alerts
-    THEME_COLORS.map { |color| alert(color) }.join("\n")
+    raw(THEME_COLORS.map { |color| alert(color) }.join("\n"))
   end
                 
   def alert(color)
-    "<div class=\"alert alert-#{color}\" role=\"alert\">/#{color}/ #{loremipsum(200)}</div>"
+    raw("<div class=\"alert alert-#{color}\" role=\"alert\">/#{color}/ #{loremipsum(200)}</div>")
   end
 
   def all_buttons
-    THEME_COLORS.map { |color| button(color) }.join("\n")
+    raw(THEME_COLORS.map { |color| button(color) }.join("\n"))
   end
 
   def button(color)
-    "<button type='button' class=\"btn btn-#{color} col-sm-3\">#{color}</button>"
+    raw("<button type='button' class=\"btn btn-#{color} col-sm-3\">#{color}</button>")
   end
 end
